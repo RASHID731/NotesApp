@@ -1,0 +1,28 @@
+body {
+	font-family: 'Comfortaa', cursive;
+}
+
+.heading-primary {
+	font-size: 10rem;
+	color: $white;
+	text-align: center;
+}
+
+.heading-secondary {
+	display: block;
+	font-weight: 300;
+	font-size: 2.8rem;
+	color: $navy;
+}
+
+.paragraph {
+	font-weight: 300;
+	font-size: 1.7rem;
+	color: $navy;
+}
+
+.label {
+	font-weight: 300;
+	font-size: 1.4rem;
+	color: $gray-dark;
+}

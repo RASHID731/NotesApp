@@ -1,0 +1,86 @@
+.btn {
+	cursor: pointer;
+	border: none;
+	display: inline-block;
+	font-family: 'Comfortaa', sans-serif;
+	position: relative;
+	transition: all 0.2s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+
+	&--new {
+		position: absolute;
+		top: 2.7rem;
+		right: 4rem;
+		font-size: 1.2rem;
+		box-shadow: 0 .1rem .5rem $gray-dark;
+		border-radius: 8px;
+		background-color: $gray-light;
+		color: $green;
+		outline: none;
+
+		&:hover {
+			background-color: $green;
+			color: $gray-light;
+		}
+
+		&:active {
+			background-color: darken($gray, 1);
+		}
+
+		&__icon {
+			padding: 1rem;
+		}
+	}
+
+	&--delete {
+		border-radius: 5px;
+		background-color: $white;
+		box-shadow: 0 .1rem .5rem darken($gray-dark, 10);
+		color: $red;
+		font-size: .9rem;
+
+		&:hover {
+			background-color: $red;
+			color: $white;
+		}
+
+		&:active {
+			background-color: darken($white, 10);
+
+			&::after {
+				display: none;
+			}
+		}
+
+		&__icon {
+			padding: .9rem 1.2rem;
+		}
+	}
+
+	&--submit {
+		display: flex;
+		font-size: 1.6rem;
+		border-radius: 5rem;
+		color: $black;
+		box-shadow: 0 .1rem .5rem darken($white, 10);
+		padding: 1rem 3rem;
+		outline: none;
+
+		&:hover {
+			background-color: $green;
+			color: $white;
+		}
+
+		&:hover &__icon {
+			color: $white;
+		}
+
+		&__icon {
+			color: $green;
+			margin-left: 1rem;
+		}
+	}
+}

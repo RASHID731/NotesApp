@@ -1,0 +1,32 @@
+.app {
+	background-color: $green;
+	min-height: 15rem;
+	overflow: hidden;
+	padding: 5rem 7rem;
+	z-index: 0;
+}
+
+.content {
+	display: flex;
+	align-items: start;
+}
+
+.content-group {
+	box-shadow: 0 .3rem 1rem $gray-dark-2;
+	background-color: $white;
+	position: relative;
+	width: 100%;
+
+	&--color {
+		width: 40%;
+		min-height: 15rem;
+		border-radius: 5px;
+		padding: 3.5rem 4rem;
+	}
+
+	&--note {
+		border-radius: 5px;
+		padding: 3.5rem 4rem;
+		width: 60%;
+	}
+}

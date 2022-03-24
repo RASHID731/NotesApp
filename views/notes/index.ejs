@@ -1,0 +1,115 @@
+<% layout('layouts/boilerplate') %>
+
+
+<main class="app">
+    <h1 class="heading-primary mx-4">Nootes</h1>
+    <div class="content">
+        <div class="content-group content-group--color mr-4">
+            <h2 class="heading-secondary mb-6">Classes of notes</h2>
+            <a href="#classForm" class="btn btn--new"><i class="far fa-2x fa-newspaper btn--new__icon"></i></a>
+            <ul class="color-container">
+                <% for (let noteclass of classes) { %>
+                    <li class="class">
+                        <div class="class__group">
+                            <span class="class__color-box" id="colorBox" style="background-color: <%= noteclass.color %>;"></span>
+                        </div>
+                        <div class="class__group class__text-box">
+                            <p class="class__text"><%= noteclass.name %></p>
+                        </div>
+                        <div class="class__group class__delete-box">
+                            <form action="/classes/<%= noteclass._id %>?_method=DELETE" method="POST">
+                                <button class="class__delete-button">
+                                    <i class="fas fa-times-circle fa-lg class__delete-icon"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="content-group content-group--note" id="section-notes">
+            <a href="#noteForm" class="btn btn--new"><i class="far fa-2x fa-sticky-note btn--new__icon"></i></a>
+            <h2 class="heading-secondary mb-6">All to dos</h2>
+            <ul class="note-container">
+                <% for (let note of notes) { %>
+                    <li class="note" style="border-left: .7rem solid <%= note.class.color %>;">
+                        <div class="note__group note__group--check">
+                            <input type="checkbox" class="note__checkbox-input" id="<%= note._id %>">
+                            <label for="<%= note._id %>" class="note__checkbox-label">
+                                <div class="note__checkbox-button">
+                                    <i class="fas fa-check fa-2x note__checkbox-button__icon"></i>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="note__group note__group--text">
+                            <p class="note__text"><%= note.text %></p>
+                        </div>
+                        <div class="note__group note__group--btns">
+                            <form action="/notes/<%= note._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn--delete">
+                                    <i class="fas fa-times fa-2x btn--delete__icon" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<div class="popup" id="noteForm">
+    <div class="popup__content">
+        <a href="#section-notes" class="popup__close">
+            <i class="fas fa-times popup__close__icon"></i>
+        </a>
+        <form action="/notes" method="POST" class="form form--note">
+            <h2 class="heading-secondary mb-5">New to do</h2>
+            <div class="form__group d-block mb-2">
+                <input type="text" class="form__text--input" placeholder="Note..." name="text" maxlength=35 required>
+            </div>
+            <div class="form__group d-block mb-2">
+                <% for (let noteclass of classes) { %>
+                    <div class="form__radio-group">
+                        <input type="radio" name="classId" id="<%= noteclass._id %>" class="form__radio-input" value="<%= noteclass._id %>" required>
+                        <label for="<%= noteclass._id %>" class="form__radio-label">
+                            <div class="form__radio-button">
+                                <div class="form__radio-button--color-box" style="background-color: <%= noteclass.color %>;"></div>
+                                <div class="form__radio-button--text-box">
+                                    <p class="form__radio-button--text"><%= noteclass.name %></p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                <% } %>
+            </div>
+            <div class="form__group d-block">
+                <button type="submit" class="btn btn--submit">Submit new note<i class="fas fa-paper-plane fa-lg btn--submit__icon"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="popup" id="classForm">
+    <div class="popup__content">
+        <a href="#section-notes" class="popup__close">
+            <i class="fas fa-times popup__close__icon"></i>
+        </a>
+        <form action="/classes" method="POST" class="form form--color mb-5">
+            <h2 class="heading-secondary mb-5">New class</h2>
+            <div class="d-flex mb-6">
+                <div class="form__group mr-3">
+                    <input type="text" class="form__text--input" placeholder="Class..." name="name" maxlength=30 required>
+                </div>
+                <div class="form__group">
+                    <label for="colorInput" class="form__color--label">
+                        <span class="form__color--button"></span>
+                    </label>
+                    <input type="color" id="colorInput" class="form__color--input" name="color" value="#42cf91">
+                </div>
+            </div>
+            <div class="form__group d-block">
+                <button type="submit" class="btn btn--submit">Submit new class<i class="fas fa-paper-plane fa-lg btn--submit__icon"></i></button>
+            </div>
+        </form>
+    </div>
+</div>

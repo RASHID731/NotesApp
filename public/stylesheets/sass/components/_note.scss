@@ -1,0 +1,84 @@
+.note {
+	background-color: $color-2;
+	background-color: $gray-light;
+	box-shadow: 0 .2rem .5rem $gray-dark;
+	border-radius: 5px;
+	min-height: 3rem;
+	width: auto;
+	overflow: hidden;
+	padding: 2rem 0;
+	position: relative;
+	z-index: 1;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	&__text {
+		color: darken($white, 5);
+		color: $blue-light;
+		cursor: default;
+		font-weight: 300;
+		font-size: 1.8rem;
+		width: auto;
+	}
+
+	&__group {
+		display: inline-block;
+
+		&--check {
+			margin-left: 2rem;
+		}
+
+		&--text {
+			margin: .8rem .8rem 0.8rem 2rem;
+		}
+
+		&--btns {
+			float: right;
+			margin-right: 2rem;
+		}
+	}
+
+	&__checkbox-input {
+		display: none;
+	}
+
+	&__checkbox-input:checked ~ &__checkbox-label &__checkbox-button {
+		transform: scale(1.1);
+		border: 4px solid $gray-light;
+		box-shadow: none;
+	}
+
+	&__checkbox-input:checked ~ &__checkbox-label &__checkbox-button &__checkbox-button__icon {
+		opacity: 1;
+		text-shadow: 0 .1rem .5rem darken($white, 10);
+	}
+
+	&__checkbox-label {
+		position: relative;
+	}
+
+	&__checkbox-button {
+		border: 4px solid $green;
+		border-radius: 50%;
+		box-shadow: 0 .1rem .5rem darken($white, 10);
+		cursor: pointer;
+		position: relative;
+		transform: scale(0.7);
+		transition: all .2s;
+
+		&:hover {
+			// border: 5px solid $green;
+			transform: scale(1.1);
+		}
+
+		&__icon {
+			padding: .08rem .12rem;
+			color: $green;
+			opacity: 0;
+			transition: opacity .1s .1s;
+			transition: padding .2s;
+		}
+	}
+}

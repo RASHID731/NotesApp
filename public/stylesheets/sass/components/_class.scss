@@ -1,0 +1,61 @@
+.class {
+	background-color: $gray-light;
+	border-radius: 5rem;
+	box-shadow: 0 .1rem .5rem darken($white, 10);
+	display: inline-flex;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+	transition: all 2s;
+
+	&__group {
+		float: left;
+	}
+
+	&:not(:last-child) {
+		margin-right: .5rem;
+	}
+
+	&__color-box {
+		display: inline-block;
+		border-radius: 5rem;
+		padding: 1rem 1rem;
+		margin: .1rem 1.2rem 0 0;
+	}
+
+	&__text-box {
+		margin: .4rem 1rem 0 0;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		color: $black;
+	}
+
+	&__delete-box {
+		display: flex;
+		font-size: .8rem;
+		margin-top: .5rem;
+	}
+
+	&__delete-button {
+		background: none;
+		border: none;
+		outline: none;
+		display: none;
+		cursor: pointer;
+	}
+
+	&__delete-icon {
+		color: $gray-dark;
+		opacity: 1;
+		transition: all .2s;
+	}
+
+	&:hover &__delete-button {
+		display: inline-block;
+	}
+
+	&__delete-button:hover &__delete-icon {
+		color: darken($gray-dark, 10);
+	}
+}

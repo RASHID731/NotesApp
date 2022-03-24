@@ -1,0 +1,53 @@
+.popup {
+	background-color: rgba($green, .6);
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s;
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(.2);
+		transition: all .2s .1s;
+	}
+
+	&__close {
+		position: absolute;
+		top: -1.8rem;
+		right: -1.8rem;
+		z-index: 10;
+		background-color: $red;
+		color: $white;
+		border-radius: 50%;
+		font-size: 2rem;
+		padding: 0.7rem 1rem;
+		transition: all .2s;
+
+		&:hover {
+			background-color: lighten($red, 5);
+			transform: scale(1.1) rotate(180deg);
+		}
+
+		&__icon {
+			margin: .3rem;
+		}
+	}
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&:target &__content {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}

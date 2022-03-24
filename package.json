@@ -1,0 +1,21 @@
+{
+	"name": "space-museum",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile:sass": "node-sass sass/main.scss css/style.css -w"
+	},
+	"author": "Rashid Gorkhmaz",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.0",
+		"ejs": "^3.1.6",
+		"ejs-mate": "^3.0.0",
+		"express": "^4.17.1",
+		"method-override": "^3.0.0",
+		"mongoose": "^5.11.15",
+		"node-sass": "^5.0.0",
+		"nodemon": "^2.0.15"
+	}
+}

@@ -1,0 +1,81 @@
+.m {
+	&x {
+		&-1 {
+			margin: 3rem 0;
+		}
+
+		&-2 {
+			margin: 6rem 0;
+		}
+
+		&-3 {
+			margin: 7rem 0;
+		}
+
+		&-4 {
+			margin: 9rem 0;
+		}
+	}
+
+	&t {
+		&-1 {
+			margin-top: .4rem;
+		}
+	}
+
+	&l {
+		&-1 {
+			margin-left: .5rem;
+		}
+
+		&-2 {
+			margin-left: 1rem;
+		}
+	}
+
+	&r {
+		&-3 {
+			margin-right: 1.5rem;
+		}
+
+		&-4 {
+			margin-right: 3rem;
+		}
+	}
+
+	&b {
+		&-1 {
+			margin-bottom: 1rem;
+		}
+
+		&-2 {
+			margin-bottom: 1.5rem;
+		}
+
+		&-5 {
+			margin-bottom: 2.5rem;
+		}
+
+		&-6 {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.d {
+	&-block {
+		display: block;
+	}
+
+	&-inlblock {
+		display: inline-block;
+	}
+
+	&-inline {
+		display: inline;
+	}
+	
+	&-flex {
+		display: flex;
+	}
+}
