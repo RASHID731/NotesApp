@@ -1,17 +1,17 @@
-// module.exports.notes = [
-// 	{
-// 		text: 'Create a Website',
-// 		category: 'Work'
-// 	},
-// 	{
-// 		text: 'Ride a Bike',
-// 		category: 'Health'
-// 	},
-// 	{
-// 		text: 'Cook Lasanga',
-// 		category: 'Food'
-// 	}
-// ];
+module.exports.notes = [
+	{
+		text: 'Create a Website',
+		category: 'Work'
+	},
+	{
+		text: 'Ride a Bike',
+		category: 'Health'
+	},
+	{
+		text: 'Cook Lasanga',
+		category: 'Food'
+	}
+];
 
 module.exports.nClasses = [
 	{
