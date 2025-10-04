@@ -7,6 +7,7 @@ This Express and EJS to-do manager lets you group notes into color-coded classes
 - Backend: Node.js with Express
 - Frontend: EJS templates rendered with ejs-mate, vanilla JavaScript, Sass-authored styles compiled to CSS
 - Data: MongoDB persisted through Mongoose models with seeded class/category data
+- Deployment: Render
 
 ## Architecture
 - **Server (`app.js`)**: Express application bootstrapped with EJS rendering, static asset serving, and REST-style routes for notes and classes. Uses Mongoose models to persist data and links notes to their owning class.
