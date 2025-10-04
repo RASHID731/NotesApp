@@ -4,11 +4,9 @@
 This Express and EJS to-do manager lets you group notes into color-coded classes, create new tasks in context, and keep the workspace tidy by removing notes or entire classes in one click. Notes inherit their class color for quick scanning, and the interface exposes pop-up forms to add content without navigating away from the board.
 
 ## Tech Stack
-- Node.js with Express 4
-- EJS + ejs-mate for server-side templates
-- MongoDB via Mongoose ODM
-- method-override for RESTful form submissions
-- dotenv for per-environment configuration
+- Backend: Node.js with Express
+- Frontend: EJS templates rendered with ejs-mate, vanilla JavaScript, Sass-authored styles compiled to CSS
+- Data: MongoDB persisted through Mongoose models with seeded class/category data
 
 ## Architecture
 - **Server (`app.js`)**: Express application bootstrapped with EJS rendering, static asset serving, and REST-style routes for notes and classes. Uses Mongoose models to persist data and links notes to their owning class.
@@ -56,7 +54,6 @@ This Express and EJS to-do manager lets you group notes into color-coded classes
 ```
 
 ## Minimal Setup
-1. Create a `.env` file with `DB_URL` pointing to your MongoDB instance (for local development, use `mongodb://localhost:27017/nootesApp`).
-2. Install dependencies with `npm install`.
-3. (Optional) Seed starter classes by running `node seeds/index.js` with MongoDB running locally.
-4. Launch the app with `npm start` and visit `http://localhost:3000/notes`.
+1. Install dependencies with `npm install`.
+2. (Optional) Seed starter classes by running `node seeds/index.js` with MongoDB running locally.
+3. Launch the app with `npm start` and visit `http://localhost:3000/notes`.
